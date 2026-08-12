@@ -1,0 +1,92 @@
+=== hdfs_chrono START Tue Aug  4 20:43:22 IST 2026 ===
+train units=389427 vocab=19 device=cpu
+train windows=500000
+/Users/saritanandal/Downloads/Log Anomaly Detection Paper/local_runs/deeplog_torch.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  tot += float(loss) * len(xb)
+epoch 1/5 loss=0.7759 (8s)
+epoch 2/5 loss=0.2938 (17s)
+epoch 3/5 loss=0.2588 (25s)
+epoch 4/5 loss=0.2477 (34s)
+epoch 5/5 loss=0.2421 (42s)
+{
+  "precision": 0.7636,
+  "recall": 0.3914,
+  "f1": 0.5175,
+  "fpr": 0.0027,
+  "tp": 1457,
+  "fp": 451,
+  "fn": 2266,
+  "tn": 168345
+}
+saved data/hdfs_chrono/deeplog_results.json
+=== hdfs_chrono EXIT=0 Tue Aug  4 20:45:01 IST 2026 ===
+=== hdfs_random START Tue Aug  4 20:45:01 IST 2026 ===
+train units=390823 vocab=19 device=cpu
+train windows=500000
+/Users/saritanandal/Downloads/Log Anomaly Detection Paper/local_runs/deeplog_torch.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  tot += float(loss) * len(xb)
+epoch 1/5 loss=0.7251 (9s)
+epoch 2/5 loss=0.2549 (17s)
+epoch 3/5 loss=0.2207 (25s)
+epoch 4/5 loss=0.2096 (34s)
+epoch 5/5 loss=0.2039 (42s)
+{
+  "precision": 0.9046,
+  "recall": 0.4481,
+  "f1": 0.5993,
+  "fpr": 0.0014,
+  "tp": 2294,
+  "fp": 242,
+  "fn": 2825,
+  "tn": 167158
+}
+saved data/hdfs_random/deeplog_results.json
+=== hdfs_random EXIT=0 Tue Aug  4 20:46:39 IST 2026 ===
+=== bgl_chrono START Tue Aug  4 20:46:39 IST 2026 ===
+train units=29697 vocab=199 device=cpu
+train windows=500000
+/Users/saritanandal/Downloads/Log Anomaly Detection Paper/local_runs/deeplog_torch.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  tot += float(loss) * len(xb)
+epoch 1/5 loss=1.0183 (8s)
+epoch 2/5 loss=0.1826 (17s)
+epoch 3/5 loss=0.1433 (26s)
+epoch 4/5 loss=0.1275 (35s)
+epoch 5/5 loss=0.1175 (44s)
+{
+  "precision": 0.1564,
+  "recall": 0.9921,
+  "f1": 0.2702,
+  "fpr": 0.6484,
+  "tp": 1516,
+  "fp": 8178,
+  "fn": 12,
+  "tn": 4435
+}
+saved data/bgl_chrono/deeplog_results.json
+=== bgl_chrono EXIT=0 Tue Aug  4 20:47:48 IST 2026 ===
+=== bgl_random START Tue Aug  4 20:47:48 IST 2026 ===
+train units=29616 vocab=311 device=cpu
+train windows=500000
+/Users/saritanandal/Downloads/Log Anomaly Detection Paper/local_runs/deeplog_torch.py:101: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  tot += float(loss) * len(xb)
+epoch 1/5 loss=1.2398 (8s)
+epoch 2/5 loss=0.2849 (17s)
+epoch 3/5 loss=0.2422 (26s)
+epoch 4/5 loss=0.2238 (35s)
+epoch 5/5 loss=0.2123 (44s)
+{
+  "precision": 0.6774,
+  "recall": 0.991,
+  "f1": 0.8047,
+  "fpr": 0.0538,
+  "tp": 1434,
+  "fp": 683,
+  "fn": 13,
+  "tn": 12011
+}
+saved data/bgl_random/deeplog_results.json
+=== bgl_random EXIT=0 Tue Aug  4 20:48:56 IST 2026 ===

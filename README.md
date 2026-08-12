@@ -18,6 +18,7 @@ LogBERT and frozen-embedding runs — are archived unmodified under `results/`.
 | `results/` | Per-seed result JSONs for every table and figure, plus archived re-run outputs |
 | `figures/` | Generated paper figures |
 | `deeplog_torch.py`, `deeplog_torch_v1_1.py` | Protocol-matched DeepLog re-implementation (v1.1 adds MPS + multi-g sweep) |
+| `convert_logbert.py`, `README_LOCAL.md` | Split-format converter and instructions for the author-hardware re-runs |
 | `DATASET_CHECKSUMS.md5` | MD5 checksums of the exact dataset files used |
 
 ## Datasets (not redistributed here)

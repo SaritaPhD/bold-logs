@@ -1,0 +1,98 @@
+{
+  "bgl_chrono": {
+    "deeplog_user_hardware": {
+      "precision": 0.1564,
+      "recall": 0.9921,
+      "f1": 0.2702,
+      "fpr": 0.6484,
+      "tp": 1516,
+      "fp": 8178,
+      "fn": 12,
+      "tn": 4435,
+      "device": "cpu",
+      "torch": "2.8.0",
+      "train_seconds": 44.1,
+      "vocab": 199,
+      "params": {
+        "h": 10,
+        "g": 9,
+        "epochs": 5,
+        "max_train_windows": 500000,
+        "seed": 0
+      },
+      "provenance": "run by author on own hardware; JSON untouched"
+    }
+  },
+  "bgl_random": {
+    "deeplog_user_hardware": {
+      "precision": 0.6774,
+      "recall": 0.991,
+      "f1": 0.8047,
+      "fpr": 0.0538,
+      "tp": 1434,
+      "fp": 683,
+      "fn": 13,
+      "tn": 12011,
+      "device": "cpu",
+      "torch": "2.8.0",
+      "train_seconds": 44.3,
+      "vocab": 311,
+      "params": {
+        "h": 10,
+        "g": 9,
+        "epochs": 5,
+        "max_train_windows": 500000,
+        "seed": 0
+      },
+      "provenance": "run by author on own hardware; JSON untouched"
+    }
+  },
+  "hdfs_chrono": {
+    "deeplog_user_hardware": {
+      "precision": 0.7636,
+      "recall": 0.3914,
+      "f1": 0.5175,
+      "fpr": 0.0027,
+      "tp": 1457,
+      "fp": 451,
+      "fn": 2266,
+      "tn": 168345,
+      "device": "cpu",
+      "torch": "2.8.0",
+      "train_seconds": 42.1,
+      "vocab": 19,
+      "params": {
+        "h": 10,
+        "g": 9,
+        "epochs": 5,
+        "max_train_windows": 500000,
+        "seed": 0
+      },
+      "provenance": "run by author on own hardware; JSON untouched"
+    }
+  },
+  "hdfs_random": {
+    "deeplog_user_hardware": {
+      "precision": 0.9046,
+      "recall": 0.4481,
+      "f1": 0.5993,
+      "fpr": 0.0014,
+      "tp": 2294,
+      "fp": 242,
+      "fn": 2825,
+      "tn": 167158,
+      "device": "cpu",
+      "torch": "2.8.0",
+      "train_seconds": 42.1,
+      "vocab": 19,
+      "params": {
+        "h": 10,
+        "g": 9,
+        "epochs": 5,
+        "max_train_windows": 500000,
+        "seed": 0
+      },
+      "provenance": "run by author on own hardware; JSON untouched"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "config": {
+    "alpha": 0.005,
+    "features": "identity (frozen vocab)"
+  },
+  "results": {
+    "50/10/40": {
+      "train_frac": 0.5,
+      "test_units": 18854,
+      "test_anomalies": 1971,
+      "templates_post_cutoff": 187,
+      "templates_total": 419,
+      "benign_test_unseen_share": 0.587,
+      "anom_test_unseen_share": 0.72,
+      "models": {
+        "PCA-SPE": {
+          "precision": 0.1414,
+          "recall": 0.9158,
+          "f1": 0.245,
+          "fpr": 0.6491,
+          "tp": 1805,
+          "fp": 10959,
+          "fn": 166,
+          "tn": 5924,
+          "pr_auc": 0.1134
+        },
+        "MLP-AE": {
+          "precision": 0.3077,
+          "recall": 0.0284,
+          "f1": 0.052,
+          "fpr": 0.0075,
+          "tp": 56,
+          "fp": 126,
+          "fn": 1915,
+          "tn": 16757,
+          "pr_auc": 0.1056
+        }
+      }
+    },
+    "60/10/30": {
+      "train_frac": 0.6,
+      "test_units": 14141,
+      "test_anomalies": 1528,
+      "templates_post_cutoff": 175,
+      "templates_total": 419,
+      "benign_test_unseen_share": 0.66,
+      "anom_test_unseen_share": 0.762,
+      "models": {
+        "PCA-SPE": {
+          "precision": 1.0,
+          "recall": 0.0007,
+          "f1": 0.0013,
+          "fpr": 0.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1527,
+          "tn": 12613,
+          "pr_auc": 0.1246
+        },
+        "MLP-AE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 1528,
+          "tn": 12613,
+          "pr_auc": 0.1646
+        }
+      }
+    },
+    "70/10/20": {
+      "train_frac": 0.7,
+      "test_units": 9427,
+      "test_anomalies": 815,
+      "templates_post_cutoff": 129,
+      "templates_total": 419,
+      "benign_test_unseen_share": 0.605,
+      "anom_test_unseen_share": 0.829,
+      "models": {
+        "PCA-SPE": {
+          "precision": 0.0722,
+          "recall": 0.2528,
+          "f1": 0.1123,
+          "fpr": 0.3074,
+          "tp": 206,
+          "fp": 2647,
+          "fn": 609,
+          "tn": 5965,
+          "pr_auc": 0.1277
+        },
+        "MLP-AE": {
+          "precision": 1.0,
+          "recall": 0.0368,
+          "f1": 0.071,
+          "fpr": 0.0,
+          "tp": 30,
+          "fp": 0,
+          "fn": 785,
+          "tn": 8612,
+          "pr_auc": 0.1703
+        }
+      }
+    }
+  }
+}

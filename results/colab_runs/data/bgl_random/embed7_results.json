@@ -1,0 +1,51 @@
+{
+  "design": "7th benign-only design: frozen pretrained sentence embeddings (external semantic prior)",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "config_dir": "bgl_random",
+  "alpha": 0.005,
+  "results": {
+    "PCA-SPE+frozen-emb": {
+      "precision": 0.9457,
+      "recall": 0.6012,
+      "f1": 0.7351,
+      "fpr": 0.0039,
+      "pr_auc": 0.8313,
+      "seconds": 2.2
+    },
+    "MLP-AE+frozen-emb": {
+      "agg": {
+        "precision": 0.9444,
+        "recall": 0.842,
+        "f1": 0.8903,
+        "fpr": 0.0056,
+        "pr_auc": 0.9469
+      },
+      "per_seed": [
+        {
+          "precision": 0.9417,
+          "recall": 0.8376,
+          "f1": 0.8866,
+          "fpr": 0.0059,
+          "pr_auc": 0.9457,
+          "seconds": 54.2
+        },
+        {
+          "precision": 0.9463,
+          "recall": 0.8404,
+          "f1": 0.8902,
+          "fpr": 0.0054,
+          "pr_auc": 0.9467,
+          "seconds": 50.6
+        },
+        {
+          "precision": 0.9453,
+          "recall": 0.848,
+          "f1": 0.894,
+          "fpr": 0.0056,
+          "pr_auc": 0.9483,
+          "seconds": 52.9
+        }
+      ]
+    }
+  }
+}

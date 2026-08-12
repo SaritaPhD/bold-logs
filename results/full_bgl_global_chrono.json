@@ -1,0 +1,87 @@
+{
+  "config": {
+    "alpha": 0.005,
+    "ocsvm_subsample": 10000,
+    "split": "60/10/30 benign-only train+cal",
+    "features": "frozen-vocab tfidf counts + seq stats + OOV bin"
+  },
+  "shape": {
+    "train": 25427,
+    "cal": 4270,
+    "test": 14141,
+    "test_anomalies": 1528,
+    "dim": 171
+  },
+  "models": {
+    "PCA-SPE": {
+      "0": {
+        "precision": 1.0,
+        "recall": 0.0006544502617801048,
+        "f1": 0.0013080444735120997,
+        "fpr": 0.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 1527,
+        "tn": 12613,
+        "pr_auc": 0.12457148256926702,
+        "seconds": 1.9
+      }
+    },
+    "IForest": {
+      "0": {
+        "precision": 0.5,
+        "recall": 0.04319371727748691,
+        "f1": 0.07951807228915662,
+        "fpr": 0.00523269642432411,
+        "tp": 66,
+        "fp": 66,
+        "fn": 1462,
+        "tn": 12547,
+        "pr_auc": 0.18607077504626054,
+        "seconds": 0.8
+      }
+    },
+    "MLP-AE": {
+      "0": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fpr": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1528,
+        "tn": 12613,
+        "pr_auc": 0.1646480280784385,
+        "seconds": 3.4
+      }
+    },
+    "OCSVM": {
+      "0": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "fpr": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 1528,
+        "tn": 12613,
+        "pr_auc": 0.1306601713272667,
+        "seconds": 6.9
+      }
+    },
+    "MarkovNext": {
+      "0": {
+        "precision": 0.03125,
+        "recall": 0.001963350785340314,
+        "f1": 0.0036945812807881767,
+        "fpr": 0.007373344961547609,
+        "tp": 3,
+        "fp": 93,
+        "fn": 1525,
+        "tn": 12520,
+        "pr_auc": 0.11363083240888015,
+        "seconds": 5.1
+      }
+    }
+  }
+}

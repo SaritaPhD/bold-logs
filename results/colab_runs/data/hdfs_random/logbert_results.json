@@ -1,0 +1,36 @@
+{
+  "method": "LogBERT (protocol-matched re-implementation; MLM-only, benign-quantile threshold -- see header for deviations)",
+  "config_dir": "hdfs_random",
+  "params": {
+    "data": "data/hdfs_random",
+    "g": 9,
+    "alpha": 0.005,
+    "epochs": 5,
+    "d_model": 128,
+    "nhead": 4,
+    "layers": 2,
+    "maxlen": 128,
+    "mask_ratio": 0.3,
+    "batch": 128,
+    "max_train_units": 100000,
+    "seed": 0,
+    "device": "auto",
+    "device_resolved": "cuda"
+  },
+  "vocab_size": 19,
+  "metrics": {
+    "precision": 0.9724,
+    "recall": 0.4679,
+    "f1": 0.6318,
+    "fpr": 0.0004,
+    "pr_auc": 0.4804,
+    "tp": 2395,
+    "fp": 68,
+    "fn": 2724,
+    "tn": 167332
+  },
+  "threshold": 0.0,
+  "train_seconds": 39.1,
+  "test_seconds": 15.4,
+  "torch": "2.11.0+cu128"
+}
