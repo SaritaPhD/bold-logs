@@ -1,0 +1,10 @@
+{
+  "config": "bgl_random",
+  "split_mode": "random",
+  "seed": 0,
+  "split_def": "60/10/30 by unit order; train+cal benign-only",
+  "n_train_benign": 29616,
+  "n_test_normal": 12694,
+  "n_test_abnormal": 1447,
+  "source": "bgl_global.joblib"
+}
