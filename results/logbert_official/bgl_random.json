@@ -1,0 +1,32 @@
+{
+  "train_sessions_used": 29616,
+  "train_sessions_available": 29616,
+  "test_min_len_drop": {
+    "test_normal": {
+      "n": 12694,
+      "dropped_lt10": 0
+    },
+    "test_abnormal": {
+      "n": 1447,
+      "dropped_lt10": 0
+    }
+  },
+  "config": "bgl_random",
+  "wall_seconds": 4774,
+  "best_threshold_and_ratio": [
+    "0",
+    "0.0"
+  ],
+  "tp_tn_fp_fn": [
+    "1401",
+    "12606",
+    "88",
+    "46"
+  ],
+  "precision_recall_f1_pct": [
+    "94.09",
+    "96.82",
+    "95.44"
+  ],
+  "note": "official HelenGuohx/logbert code and defaults; threshold swept on the test set by its own predict step (test-tuned); sessions with <10 keys dropped by min_len=10"
+}

@@ -1,0 +1,79 @@
+{
+  "method": "DeepLog (re-implementation v1.1, Du et al. CCS 2017)",
+  "config_dir": "hdfs_random",
+  "params": {
+    "data": "splits/hdfs_random",
+    "h": 10,
+    "g": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "epochs": 5,
+    "hidden": 64,
+    "layers": 2,
+    "batch": 2048,
+    "max_train_windows": 500000,
+    "seed": 0,
+    "device": "cpu",
+    "device_resolved": "cpu"
+  },
+  "vocab_size": 19,
+  "metrics_per_g": {
+    "1": {
+      "precision": 0.0672,
+      "recall": 0.8267,
+      "f1": 0.1243,
+      "fpr": 0.3509,
+      "tp": 4232,
+      "fp": 58749,
+      "fn": 887,
+      "tn": 108651
+    },
+    "3": {
+      "precision": 0.2162,
+      "recall": 0.8257,
+      "f1": 0.3427,
+      "fpr": 0.0915,
+      "tp": 4227,
+      "fp": 15323,
+      "fn": 892,
+      "tn": 152077
+    },
+    "5": {
+      "precision": 0.8113,
+      "recall": 0.5315,
+      "f1": 0.6423,
+      "fpr": 0.0038,
+      "tp": 2721,
+      "fp": 633,
+      "fn": 2398,
+      "tn": 166767
+    },
+    "7": {
+      "precision": 0.8641,
+      "recall": 0.4683,
+      "f1": 0.6074,
+      "fpr": 0.0023,
+      "tp": 2397,
+      "fp": 377,
+      "fn": 2722,
+      "tn": 167023
+    },
+    "9": {
+      "precision": 0.9046,
+      "recall": 0.4481,
+      "f1": 0.5993,
+      "fpr": 0.0014,
+      "tp": 2294,
+      "fp": 242,
+      "fn": 2825,
+      "tn": 167158
+    }
+  },
+  "train_seconds": 132.6,
+  "test_seconds": 2471.5,
+  "torch": "2.13.0+cu130"
+}

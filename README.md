@@ -87,3 +87,37 @@ for the deep re-runs, as recorded inside each result JSON.
 ## License
 
 MIT (see LICENSE).
+
+## Revision materials (manuscript v4)
+
+Added in v3 of this artifact, together with the archived official-LogBERT runs below.
+Everything was produced on a 2-vCPU container, Python 3.12, scikit-learn 1.8.0,
+PyTorch 2.13 (CPU), from the LogHub files whose MD5s match `DATASET_CHECKSUMS.md5`;
+run logs are under `logs/`.
+
+| Script | Produces | Used in the paper for |
+|---|---|---|
+| `scripts/prepare_thunderbird.py` | `data/thunderbird_global.joblib` | Thunderbird parse as a script |
+| `scripts/oov_rule.py` | `results/oov_rule.json` | unseen-template rule rows in Tables 3, 4, 11; Fig. 1 |
+| `scripts/dump_scores.py` | `results/scores/<config>_<split>.npz` (seed-0 calibration/test scores of every detector, plus the MLP-AE-without-OOV ablation) | inputs for the two scripts below |
+| `scripts/analyze_scores.py` | `results/score_analysis.json` | alpha sweep (Table 13), RQ2 ablation, Thunderbird recalibration counterfactual (Table 12) |
+| `scripts/label_efficiency_v2.py` | `results/bgl_label_efficiency_v2.json` | Table 9 / Fig. 2 (causal out-of-bag threshold, oracle F1, benign-quantile reference) |
+| `scripts/hdfs_loghub_parse.py` | `results/hdfs_loghub_parse.json`, `splits/hdfs_loghub_{chrono,random}/` | Table 14 (parser sensitivity), DeepLog-on-reference-parse row of Table 5 |
+| `deeplog_torch_v1_1.py --g 1 3 5 7 9` | `splits/<config>/deeplog_results_multi_g.json` | DeepLog sweep in Tables 3--5 |
+| `scripts/run_full.py --config bgl_global --split chrono --seeds 1..9` | `results/full_bgl_global_chrono.json` (10 seeds) | Table 4 |
+| `scripts/make_tables.py` | LaTeX rows for Tables 3, 4, 11 | --- |
+| `scripts/make_figures_v2.py` | `figures/f1_conditions.png`, `f2_label_efficiency.png`, `f6_thunderbird_calibration.png` | Figs. 1, 2, 6 |
+
+`hdfs_loghub_parse.py` expects LogHub's `Event_traces.csv` (HDFS_v1/preprocessed);
+set the path at the top of the script. The per-unit score dumps in `results/scores/`
+are what the alpha sweep and the recalibration counterfactual read, so those analyses
+train nothing new; result JSONs are written by the scripts only.
+
+## Official LogBERT runs
+
+`results/logbert_official/` archives runs of the official LogBERT codebase
+(HelenGuohx/logbert, unmodified, default hyperparameters, its own test-tuned
+threshold sweep) on the exported BGL splits, with full console logs.
+`colab_logbert_official/` contains the Colab notebook and inputs to reproduce them
+(see its README); the notebook also patches the official code's ragged-array
+construction for NumPy >= 1.24, which the variable-length HDFS sessions require.

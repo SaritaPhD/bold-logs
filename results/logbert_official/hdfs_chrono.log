@@ -1,0 +1,67 @@
+
+===== vocab =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(vocab_size=None, encoding='utf-8', min_freq=1, mode='vocab')
+Building Vocab
+  0%|          | 0/100000 [00:00<?, ?it/s] 22%|██▏       | 21591/100000 [00:00<00:00, 215895.28it/s] 44%|████▎     | 43636/100000 [00:00<00:00, 218560.47it/s] 66%|██████▌   | 65603/100000 [00:00<00:00, 219061.45it/s] 88%|████████▊ | 87578/100000 [00:00<00:00, 219327.37it/s]100%|██████████| 100000/100000 [00:00<00:00, 218286.21it/s]
+VOCAB SIZE: 23
+save vocab in ../output/hdfs_chrono/vocab.pkl
+
+===== train =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(mode='train')
+Save options parameters
+Loading vocab ../output/hdfs_chrono/vocab.pkl
+vocab Size:  23
+
+Loading Train Dataset
+before filtering short session
+train size  90000
+valid size  10000
+========================================
+  0%|          | 0/100000 [00:00<?, ?it/s]  8%|▊         | 8216/100000 [00:00<00:01, 82150.68it/s] 17%|█▋        | 16697/100000 [00:00<00:00, 83706.15it/s] 25%|██▌       | 25068/100000 [00:00<00:00, 77634.14it/s] 33%|███▎      | 32880/100000 [00:00<00:01, 60928.78it/s] 39%|███▉      | 39385/100000 [00:00<00:01, 55006.21it/s] 45%|████▌     | 45176/100000 [00:00<00:01, 51235.64it/s] 50%|█████     | 50482/100000 [00:00<00:01, 48553.04it/s] 55%|█████▌    | 55445/100000 [00:01<00:00, 46529.35it/s] 60%|██████    | 60156/100000 [00:01<00:00, 45612.98it/s] 65%|██████▍   | 64746/100000 [00:01<00:00, 45024.64it/s] 69%|██████▉   | 69262/100000 [00:01<00:00, 44317.29it/s] 74%|███████▎  | 73699/100000 [00:01<00:00, 42938.87it/s] 78%|███████▊  | 77995/100000 [00:01<00:00, 42745.27it/s] 82%|████████▏ | 82269/100000 [00:01<00:00, 42605.50it/s] 87%|████████▋ | 86542/100000 [00:01<00:00, 42638.16it/s] 91%|█████████ | 90806/100000 [00:01<00:00, 42445.74it/s] 95%|█████████▌| 95050/100000 [00:01<00:00, 42228.72it/s]100%|█████████▉| 99554/100000 [00:02<00:00, 43051.79it/s]100%|██████████| 100000/100000 [00:02<00:00, 48556.91it/s]
+Traceback (most recent call last):
+  File "/content/logbert/HDFS/logbert_hdfs_chrono.py", line 102, in <module>
+    Trainer(options).train()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/content/logbert/HDFS/../bert_pytorch/train_log.py", line 62, in train
+    logkey_train, logkey_valid, time_train, time_valid = generate_train_valid(self.output_path + "train", window_size=self.window_size,
+                                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 adaptive_window=self.adaptive_window,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                                 min_len=self.min_len
+                                 ^^^^^^^^^^^^^^^^^^^^
+                                )
+                                ^
+  File "/content/logbert/HDFS/../bert_pytorch/dataset/sample.py", line 90, in generate_train_valid
+    logkey_seq_pairs = np.array(logkey_seq_pairs)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (100000,) + inhomogeneous part.
+
+===== predict =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(mean=0, std=1, mode='predict')
+Traceback (most recent call last):
+  File "/content/logbert/HDFS/logbert_hdfs_chrono.py", line 105, in <module>
+    Predictor(options).predict()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/content/logbert/HDFS/../bert_pytorch/predict_log.py", line 230, in predict
+    model = torch.load(self.model_path, weights_only=False)
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../output/hdfs_chrono/bert/best_bert.pth'

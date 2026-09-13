@@ -1,0 +1,25 @@
+bgl_global/chrono PCA 2s
+bgl_global/chrono AE 85s
+bgl_global/chrono IF 1s
+bgl_global/chrono AEnoOOV 14s
+bgl_global/random PCA 17s
+bgl_global/random AE 25s
+bgl_global/random IF 1s
+bgl_global/random AEnoOOV 24s
+thunderbird/chrono PCA 63s
+thunderbird/chrono AE 78s
+thunderbird/chrono IF 2s
+thunderbird/chrono AEnoOOV 74s
+thunderbird/random PCA 63s
+thunderbird/random AE 163s
+thunderbird/random IF 1s
+thunderbird/random AEnoOOV 222s
+hdfs/chrono PCA 2s
+hdfs/chrono AE 43s
+hdfs/chrono IF 2s
+hdfs/chrono AEnoOOV 80s
+hdfs/random PCA 2s
+hdfs/random AE 26s
+hdfs/random IF 2s
+hdfs/random AEnoOOV 61s
+done

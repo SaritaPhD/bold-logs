@@ -1,0 +1,67 @@
+
+===== vocab =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(vocab_size=None, encoding='utf-8', min_freq=1, mode='vocab')
+Building Vocab
+  0%|          | 0/100000 [00:00<?, ?it/s] 22%|██▏       | 21864/100000 [00:00<00:00, 218628.22it/s] 44%|████▎     | 43727/100000 [00:00<00:00, 206058.08it/s] 64%|██████▍   | 64382/100000 [00:00<00:00, 200966.46it/s] 86%|████████▌ | 85687/100000 [00:00<00:00, 205561.13it/s]100%|██████████| 100000/100000 [00:00<00:00, 207039.12it/s]
+VOCAB SIZE: 23
+save vocab in ../output/hdfs_random/vocab.pkl
+
+===== train =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(mode='train')
+Save options parameters
+Loading vocab ../output/hdfs_random/vocab.pkl
+vocab Size:  23
+
+Loading Train Dataset
+before filtering short session
+train size  90000
+valid size  10000
+========================================
+  0%|          | 0/100000 [00:00<?, ?it/s]  4%|▍         | 4207/100000 [00:00<00:02, 42057.51it/s]  8%|▊         | 8413/100000 [00:00<00:02, 42011.98it/s] 13%|█▎        | 12615/100000 [00:00<00:02, 41839.23it/s] 17%|█▋        | 16799/100000 [00:00<00:02, 41515.66it/s] 21%|██        | 21188/100000 [00:00<00:01, 42363.74it/s] 25%|██▌       | 25466/100000 [00:00<00:01, 42501.27it/s] 30%|██▉       | 29832/100000 [00:00<00:01, 42875.68it/s] 34%|███▍      | 34121/100000 [00:00<00:01, 42583.35it/s] 38%|███▊      | 38459/100000 [00:00<00:01, 42827.39it/s] 43%|████▎     | 42770/100000 [00:01<00:01, 42913.19it/s] 47%|████▋     | 47127/100000 [00:01<00:01, 43112.73it/s] 51%|█████▏    | 51439/100000 [00:01<00:01, 42647.00it/s] 56%|█████▌    | 55706/100000 [00:01<00:01, 42205.57it/s] 60%|█████▉    | 59929/100000 [00:01<00:00, 41083.62it/s] 64%|██████▍   | 64044/100000 [00:01<00:00, 40918.86it/s] 69%|██████▊   | 68686/100000 [00:01<00:00, 42534.53it/s] 73%|███████▎  | 72947/100000 [00:01<00:00, 42328.14it/s] 77%|███████▋  | 77185/100000 [00:01<00:00, 42196.84it/s] 82%|████████▏ | 81672/100000 [00:01<00:00, 42987.97it/s] 86%|████████▌ | 86164/100000 [00:02<00:00, 43561.47it/s] 91%|█████████ | 90523/100000 [00:02<00:00, 43320.04it/s] 95%|█████████▍| 94858/100000 [00:02<00:00, 42837.60it/s] 99%|█████████▉| 99145/100000 [00:02<00:00, 42286.47it/s]100%|██████████| 100000/100000 [00:02<00:00, 42527.54it/s]
+Traceback (most recent call last):
+  File "/content/logbert/HDFS/logbert_hdfs_random.py", line 102, in <module>
+    Trainer(options).train()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/content/logbert/HDFS/../bert_pytorch/train_log.py", line 62, in train
+    logkey_train, logkey_valid, time_train, time_valid = generate_train_valid(self.output_path + "train", window_size=self.window_size,
+                                                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 adaptive_window=self.adaptive_window,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                                 min_len=self.min_len
+                                 ^^^^^^^^^^^^^^^^^^^^
+                                )
+                                ^
+  File "/content/logbert/HDFS/../bert_pytorch/dataset/sample.py", line 90, in generate_train_valid
+    logkey_seq_pairs = np.array(logkey_seq_pairs)
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (100000,) + inhomogeneous part.
+
+===== predict =====
+device cuda
+features logkey:True time: False
+
+mask ratio 0.65
+arguments Namespace(mean=0, std=1, mode='predict')
+Traceback (most recent call last):
+  File "/content/logbert/HDFS/logbert_hdfs_random.py", line 105, in <module>
+    Predictor(options).predict()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/content/logbert/HDFS/../bert_pytorch/predict_log.py", line 230, in predict
+    model = torch.load(self.model_path, weights_only=False)
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/usr/local/lib/python3.13/dist-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../output/hdfs_random/bert/best_bert.pth'

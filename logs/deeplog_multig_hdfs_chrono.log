@@ -1,0 +1,16 @@
+train units=389427 vocab=19 device=cpu g=[1, 3, 5, 7, 9]
+train windows=500000
+/home/claude/bold/deeplog_torch_v1_1.py:113: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  tot += float(loss) * len(xb)
+epoch 1/5 loss=0.7759 (26s)
+epoch 2/5 loss=0.2938 (72s)
+epoch 3/5 loss=0.2588 (318s)
+epoch 4/5 loss=0.2477 (527s)
+epoch 5/5 loss=0.2421 (815s)
+g=1: {'precision': 0.2545, 'recall': 0.8174, 'f1': 0.3882, 'fpr': 0.0528, 'tp': 3043, 'fp': 8913, 'fn': 680, 'tn': 159883}
+g=3: {'precision': 0.6925, 'recall': 0.8171, 'f1': 0.7496, 'fpr': 0.008, 'tp': 3042, 'fp': 1351, 'fn': 681, 'tn': 167445}
+g=5: {'precision': 0.7826, 'recall': 0.553, 'f1': 0.6481, 'fpr': 0.0034, 'tp': 2059, 'fp': 572, 'fn': 1664, 'tn': 168224}
+g=7: {'precision': 0.7528, 'recall': 0.3967, 'f1': 0.5196, 'fpr': 0.0029, 'tp': 1477, 'fp': 485, 'fn': 2246, 'tn': 168311}
+g=9: {'precision': 0.7636, 'recall': 0.3914, 'f1': 0.5175, 'fpr': 0.0027, 'tp': 1457, 'fp': 451, 'fn': 2266, 'tn': 168345}
+saved splits/hdfs_chrono/deeplog_results_multi_g.json

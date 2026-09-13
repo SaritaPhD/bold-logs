@@ -1,9 +1,0 @@
-{
-  "templates_total": 1437,
-  "post_cutoff": 270,
-  "post_cutoff_pct": 18.8,
-  "benign_test_unseen_share": 0.014,
-  "anom_test_unseen_share": 0.169,
-  "test_prevalence": 0.0432,
-  "overall_prevalence": 0.3836
-}

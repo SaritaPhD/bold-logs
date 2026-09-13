@@ -1,0 +1,20 @@
+{
+  "train_sessions_used": 100000,
+  "train_sessions_available": 389427,
+  "test_min_len_drop": {
+    "test_normal": {
+      "n": 168796,
+      "dropped_lt10": 0
+    },
+    "test_abnormal": {
+      "n": 3723,
+      "dropped_lt10": 1497
+    }
+  },
+  "config": "hdfs_chrono",
+  "wall_seconds": 15,
+  "best_threshold_and_ratio": null,
+  "tp_tn_fp_fn": null,
+  "precision_recall_f1_pct": null,
+  "note": "official HelenGuohx/logbert code and defaults; threshold swept on the test set by its own predict step (test-tuned); sessions with <10 keys dropped by min_len=10"
+}

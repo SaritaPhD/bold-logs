@@ -1,0 +1,18 @@
+blocks 575061 matched 575061 label agreement 1.0
+event types 29
+loghub/chrono PCA      P=0.980 R=0.932 F1=0.955 FPR=0.0004 PRAUC=0.987
+loghub/chrono AE_s0    P=0.948 R=1.000 F1=0.973 FPR=0.0012 PRAUC=0.997
+loghub/chrono AE_s1    P=0.952 R=0.999 F1=0.975 FPR=0.0011 PRAUC=0.997
+loghub/chrono AE_s2    P=0.948 R=1.000 F1=0.973 FPR=0.0012 PRAUC=0.997
+loghub/chrono OCSVM    P=0.942 R=0.817 F1=0.875 FPR=0.0011 PRAUC=0.973
+loghub/chrono IF       P=0.137 R=0.013 F1=0.024 FPR=0.0019 PRAUC=0.129
+loghub/chrono Markov   P=0.567 R=0.396 F1=0.466 FPR=0.0067 PRAUC=0.495
+loghub/chrono OOVrule  F1=0.434 R=0.277 FPR=0.0000
+loghub/random PCA      P=0.710 R=0.363 F1=0.480 FPR=0.0045 PRAUC=0.752
+loghub/random AE_s0    P=0.878 R=1.000 F1=0.935 FPR=0.0043 PRAUC=0.989
+loghub/random AE_s1    P=0.876 R=1.000 F1=0.934 FPR=0.0043 PRAUC=0.991
+loghub/random AE_s2    P=0.838 R=1.000 F1=0.912 FPR=0.0059 PRAUC=0.991
+loghub/random OCSVM    P=0.816 R=0.827 F1=0.821 FPR=0.0057 PRAUC=0.955
+loghub/random IF       P=0.031 R=0.004 F1=0.008 FPR=0.0042 PRAUC=0.194
+loghub/random Markov   P=0.697 R=0.394 F1=0.503 FPR=0.0052 PRAUC=0.518
+loghub/random OOVrule  F1=0.374 R=0.230 FPR=0.0000
